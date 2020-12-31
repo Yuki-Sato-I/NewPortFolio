@@ -9,13 +9,15 @@ interface TextProps {
 }
 
 export enum TextThemes {
-  INIT  = 'INIT',
-  CLOUD = 'CLOUD'
+  INIT    = 'INIT',
+  CLOUD   = 'CLOUD',
+  PROFILE = 'PROFILE',
 }
 
 enum ModifierClassNames {
-  INIT  = 'text-init',
-  CLOUD = 'text-cloud'
+  INIT    = 'text-init',
+  CLOUD   = 'text-cloud',
+  PROFILE = 'text-profile',
 }
 
 
@@ -33,6 +35,12 @@ const Text: React.FC<TextProps> = ({theme = [TextThemes.INIT], children, propSty
           .text-cloud {
             font-size: 32px;
             font-weight: 800;
+          }
+
+          .text-profile {
+            padding-left: 16px;
+            margin-bottom: 12px;
+            font-size: ${'20px'}
           }
         `}
       </style>

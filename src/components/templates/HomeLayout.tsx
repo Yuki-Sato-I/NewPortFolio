@@ -17,7 +17,7 @@ const HomeLayout: React.FC<HomeLayoutProps> = ({ children, title }) => {
       </main>
       <style jsx>{`
         main {
-          padding: 0 128px;
+          padding-left: 176px;
           box-sizing: border-box;
         }
       `}</style>

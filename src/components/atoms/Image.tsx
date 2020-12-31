@@ -12,33 +12,38 @@ interface ImageProps {
 }
 
 export enum ImageThemes {
-  INIT = 'INIT',
-  EYE  = 'EYE'
+  INIT    = 'INIT',
+  EYE     = 'EYE',
+  PROFILE = 'PROFILE',
 }
 
 enum ModifierClassNames {
-  INIT = 'image-init',
-  EYE = 'image-eye',
+  INIT    = 'image-init',
+  EYE     = 'image-eye',
+  PROFILE = 'image-profile',
 }
 
 
 const Image: React.FC<ImageProps> = ({theme = [ImageThemes.INIT], src, height, width, propStyle = {}, eye}) => {
   const modifierClasses = theme.map(data => ModifierClassNames[data]).join(' ');
   return (
-    <p className={["image_wrapper", modifierClasses].join(' ')} style={propStyle}>
+    <p className={["image-wrapper", modifierClasses].join(' ')} style={propStyle}>
       <img src={src} height={height} width={width}/>
       {eye ? <span className="eye" /> : ''}
       <style jsx>
         {`
-          .image_wrapper {
+          .image-wrapper {
+            display: inline-block;
           }
 
           .image-eye {
-            
           }
 
           .eye {
+          }
 
+          .image-profile {
+            overflow: hidden;
           }
         `}
       </style>

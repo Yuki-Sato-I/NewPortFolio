@@ -4,9 +4,10 @@
   BgColor: '#F0F0F0',
   AccentColor: '#FF7979',
   BorderColor: '#AEAEAE',
+  White: '#FFFFFF',
   // font size 
-  TitleSize: '24px',
-  SubTitleSize: '18px',
+  TitleSize: '40px',
+  SubTitleSize: '24px',
   TextSize: '16px',
   CaptionSize: '14px',
   SmallestSize: '12px',
