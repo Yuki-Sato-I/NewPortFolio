@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 // common
-import CommonStyle from './../../common/CommonStyle';
+import CommonStyle from '../../common/CommonStyle';
 // atoms
 import Image, { ImageThemes } from '../atoms/Image';
 import SubTitle from '../atoms/SubTitle';

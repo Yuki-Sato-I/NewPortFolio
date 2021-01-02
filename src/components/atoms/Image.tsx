@@ -15,12 +15,14 @@ export enum ImageThemes {
   INIT    = 'INIT',
   EYE     = 'EYE',
   PROFILE = 'PROFILE',
+  SKILL   = 'SKILL'
 }
 
 enum ModifierClassNames {
   INIT    = 'image-init',
   EYE     = 'image-eye',
   PROFILE = 'image-profile',
+  SKILL   = 'image-skill'
 }
 
 
@@ -42,7 +44,7 @@ const Image: React.FC<ImageProps> = ({theme = [ImageThemes.INIT], src, height, w
           .eye {
           }
 
-          .image-profile {
+          .image-profile, .image-skill {
             overflow: hidden;
           }
         `}
