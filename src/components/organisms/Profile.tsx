@@ -54,13 +54,15 @@ const Profile: React.FC<ProfileProps> = ({ }) => {
 
   return (
     <div className="profile-wrapper">
-      <Image 
-        src='./images/profile001.png'
-        theme={[ImageThemes.PROFILE]}
-        height={250}
-        width={250}
-        propStyle={{ borderRadius: '50%', border: `10px solid ${CommonStyle.BorderColor}` }}
-      />
+      <div className="profile-image">
+        <Image 
+          src='./images/profile001.png'
+          theme={[ImageThemes.PROFILE]}
+          height={250}
+          width={250}
+          propStyle={{ borderRadius: '50%', border: `10px solid ${CommonStyle.BorderColor}` }}
+        />
+      </div>
       <div className="profile-text profile-section">
         <SubTitle>Name</SubTitle>
         <Text theme={[TextThemes.PROFILE]}>Yuki Sato</Text>
@@ -108,6 +110,10 @@ const Profile: React.FC<ProfileProps> = ({ }) => {
         .profile-wrapper {
           margin-bottom: 64px;
         }
+
+        .profile-image {
+          display: inline-block;
+        }
         .profile-text {
           padding: 0 64px;
           display: inline-block;
@@ -136,6 +142,26 @@ const Profile: React.FC<ProfileProps> = ({ }) => {
           display: inline-block;
           padding-left: 24px;
           vertical-align: 4px;
+        }
+
+        @media only screen and (max-width: 1024px) {
+          .profile-image {
+            display: block;
+            text-align: center;
+          }
+          .profile-text {
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0;
+          }
+        }
+        @media only screen and (max-width: 605px) {
+          .sub {
+            display: block;
+            width: 100%;
+            margin-bottom: 16px;
+          }
         }
       `}</style>
     </div>

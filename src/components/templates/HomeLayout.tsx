@@ -16,8 +16,12 @@ const HomeLayout: React.FC<HomeLayoutProps> = ({ children, title }) => {
         {children}
       </main>
       <style jsx>{`
+        @media only screen and (min-width: 1024px) {
+          main {
+            padding-left: 176px;
+          }
+        }
         main {
-          padding-left: 176px;
           box-sizing: border-box;
         }
       `}</style>

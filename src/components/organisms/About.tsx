@@ -19,6 +19,11 @@ const About: React.FC = (props: any) => {
         .about-wrapper {
           padding: 0 80px;
         }
+        @media only screen and (max-width: 480px) {
+          .about-wrapper {
+            padding: 0 20px;
+          }
+        }
       `}</style>
     </div>
   );
