@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import "swiper/swiper.scss";
+import 'swiper/components/pagination/pagination.scss';
+import 'swiper/components/navigation/navigation.scss';
 
 ReactDOM.render(
   <React.StrictMode>

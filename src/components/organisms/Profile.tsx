@@ -98,7 +98,7 @@ const Profile: React.FC<ProfileProps> = ({ }) => {
             theme={[ImageThemes.PROFILE]}
             height={50}
             width={50}
-            propStyle={{ borderRadius: '50%', height: '50px' }}
+            propStyle={{ borderRadius: '50%', height: '50px', verticalAlign: 'top' }}
           />
           <div className="song-wrapper">
             <Text propStyle={{fontSize: '1.4rem', fontWeight: '500', marginBottom: '8px'}}>{name}</Text>
@@ -154,6 +154,9 @@ const Profile: React.FC<ProfileProps> = ({ }) => {
             width: 100%;
             margin: 0 auto;
             padding: 0;
+          }
+          .song-wrapper {
+            width: calc(100% - 100px);
           }
         }
         @media only screen and (max-width: 605px) {

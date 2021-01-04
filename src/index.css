@@ -73,3 +73,13 @@ a {
     display: unset;
   }
 }
+
+.swiper-slide {
+  width: auto !important;
+}
+
+.swiper-wrapper {
+  margin: 0 auto !important;
+  text-align: center !important;
+  width: 350px !important;
+}

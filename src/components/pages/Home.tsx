@@ -10,6 +10,7 @@ import queryString from 'query-string';
 import Nav from '../molecules/Nav';
 import Contact from '../organisms/Contact';
 import About from '../organisms/About';
+import Works from '../organisms/Works';
 
 interface TitleObj {
   [key: string]: string;
@@ -49,7 +50,7 @@ const Home: React.FC = (props: any) => {
       </Title>
       {
         query === 'about' ? <About /> :
-          query === 'works' ? <Contact /> :
+          query === 'works' ? <Works /> :
             query === 'history' ? <Contact /> :
               query === 'contact' ? <Contact /> : <React.Fragment />
       }
