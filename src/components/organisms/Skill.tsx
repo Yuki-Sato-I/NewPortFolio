@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 // common
 import CommonStyle from '../../common/CommonStyle';
 // atoms
-import Image, { ImageThemes } from '../atoms/Image';
 import SubTitle from '../atoms/SubTitle';
-import Text, { TextThemes } from '../atoms/Text';
-import Title, { TitleThemes } from '../atoms/Title';
-import { GitHub, Facebook, Twitter, Instagram } from 'react-feather';
+// moleciles
 import Icon from '../molecules/Icon';
 
 interface SkillProps {

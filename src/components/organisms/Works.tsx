@@ -2,12 +2,9 @@ import React, { useEffect, useState } from 'react';
 // common
 import CommonStyle from '../../common/CommonStyle';
 // atoms
-import Image, { ImageThemes } from '../atoms/Image';
 import SubTitle from '../atoms/SubTitle';
 import Text, { TextThemes } from '../atoms/Text';
-import Title, { TitleThemes } from '../atoms/Title';
-import { GitHub, Facebook, Twitter, Instagram } from 'react-feather';
-import Icon from '../molecules/Icon';
+// molecules
 import SwiperComponent from '../molecules/SwiperComponent';
 
 interface WorksProps {

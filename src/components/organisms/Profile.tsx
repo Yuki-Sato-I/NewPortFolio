@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { GitHub, Facebook, Twitter, Instagram } from 'react-feather';
 import axios from 'axios';
 // common
 import CommonStyle from '../../common/CommonStyle';
@@ -6,7 +7,6 @@ import CommonStyle from '../../common/CommonStyle';
 import Image, { ImageThemes } from '../atoms/Image';
 import SubTitle from '../atoms/SubTitle';
 import Text, { TextThemes } from '../atoms/Text';
-import { GitHub, Facebook, Twitter, Instagram } from 'react-feather';
 
 interface ProfileProps {
 }

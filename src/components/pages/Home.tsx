@@ -4,13 +4,13 @@ import Cloud from './../molecules/Cloud'
 // common
 import CommonStyle from './../../common/CommonStyle';
 import HomeLayout from '../templates/HomeLayout';
-import Image, { ImageThemes } from '../atoms/Image';
 import Title, { TitleThemes } from '../atoms/Title';
 import queryString from 'query-string';
 import Nav from '../molecules/Nav';
 import Contact from '../organisms/Contact';
 import About from '../organisms/About';
 import Works from '../organisms/Works';
+import History from '../organisms/History';
 
 interface TitleObj {
   [key: string]: string;
@@ -51,7 +51,7 @@ const Home: React.FC = (props: any) => {
       {
         query === 'about' ? <About /> :
           query === 'works' ? <Works /> :
-            query === 'history' ? <Contact /> :
+            query === 'history' ? <History /> :
               query === 'contact' ? <Contact /> : <React.Fragment />
       }
       <style jsx>{`

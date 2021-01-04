@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { stack as Menu } from 'react-burger-menu'
+import { Link } from 'react-router-dom';
 // common
 import CommonStyle from './../../common/CommonStyle';
+import { RouteName } from '../../common/Const';
 // atoms
 import NavItem, { NavItemThemes } from '../atoms/NavItem';
-import Image from '../atoms/Image';
-import { RouteName } from '../../common/Const';
-import { Link } from 'react-router-dom';
 
 interface NavProps {
   query: string;

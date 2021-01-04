@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
-// molecules
-import Cloud from './../molecules/Cloud'
-// common
-import CommonStyle from './../../common/CommonStyle';
-import HomeLayout from '../templates/HomeLayout';
+// atoms
 import Text, { TextThemes } from '../atoms/Text';
 import SubTitle, { SubTitleThemes } from '../atoms/SubTitle';
+// molecules
+import Cloud from './../molecules/Cloud'
+// organisms
 import Profile from './Profile';
 import Skill from './Skill';
 

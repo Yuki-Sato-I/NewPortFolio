@@ -1,5 +1,5 @@
 import React from 'react';
-// common
+// atoms
 import Input from '../atoms/Input';
 import Textarea from '../atoms/Textarea';
 
