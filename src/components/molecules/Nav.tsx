@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import queryString from 'query-string';
 import { stack as Menu } from 'react-burger-menu'
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 // common
 import CommonStyle from './../../common/CommonStyle';
 import { RouteName } from '../../common/Const';
 // atoms
 import NavItem, { NavItemThemes } from '../atoms/NavItem';
+import { capitalize } from '../../common/Function';
 
 interface NavProps {
-  query: string;
-  onClick: any;
+  onClick?: any;
 }
-const items = ['About', 'Works', 'History', 'Contact', 'Top'];
 
 var styles = {
   bmBurgerButton: {
@@ -67,20 +67,39 @@ var linkStyle ={
   fontWeight: 'bold' as 'bold'
 }
 
-const Nav: React.FC<NavProps> = ({ query, onClick }) => {
+const pages = ['about', 'works', 'history', 'contact'];
+
+const Nav: React.FC<NavProps> = () => {
+  const location = useLocation();
+  const history = useHistory();
+  const qs = queryString.parse(location.search);
   const [isOpen, setIsOpen] = useState(false);
+  const [query, setQuery] = useState(typeof qs.page === 'string' && pages.includes(qs.page) ? qs.page : 'about');
+
+  const onClick = (newQuery: string) => {
+    setQuery(newQuery);
+  }
+
+  useEffect(()=> {
+    if(location.pathname === '/home') {
+      history.push({
+        pathname: '/home',
+        search: `?page=${query}`
+      })
+    }
+  }, [query]);
 
   return (
     <>
       <ul className="list-wrapper pc">
-        {items.map((item: string) => {
+        {pages.map((item: string) => {
           return (
               <NavItem
                 theme={query === item.toLowerCase() ? [NavItemThemes.SELECTED] : []}
-                onClick={item === 'Top' ? () => window.location.href = RouteName.ROOT : () => onClick(item.toLowerCase())}
+                onClick={() => onClick(item)}
                 key={item}
               >
-                {item}
+                {capitalize(item)}
               </NavItem>
             )
         })}
@@ -93,20 +112,19 @@ const Nav: React.FC<NavProps> = ({ query, onClick }) => {
           onOpen={() => setIsOpen(true)}
           onClose={() => setIsOpen(false)}
         >
-          {items.map((item: string) => {
+          {pages.map((item: string) => {
             return (
                 <Link
                   to="#"
                   style={linkStyle}
-                  onClick={item === 'Top' ? () => window.location.href = RouteName.ROOT : 
-                  () => {
+                  onClick={() => {
                     setIsOpen(false);
-                    onClick(item.toLowerCase());
+                    onClick(item);
                   }}
                   key={item}
                   className="link-style"
                 >
-                  {item}
+                  {capitalize(item)}
                 </Link>
               )
           })}

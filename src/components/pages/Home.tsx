@@ -1,52 +1,31 @@
-import React, { useState, useEffect, useContext } from 'react';
-// molecules
-import Cloud from './../molecules/Cloud'
-// common
-import CommonStyle from './../../common/CommonStyle';
-import HomeLayout from '../templates/HomeLayout';
-import Title, { TitleThemes } from '../atoms/Title';
+import React from 'react';
 import queryString from 'query-string';
+// common
+import { capitalize } from '../../common/Function';
+// atoms
+import Title, { TitleThemes } from '../atoms/Title';
+// molecules
 import Nav from '../molecules/Nav';
+//organisms
 import Contact from '../organisms/Contact';
 import About from '../organisms/About';
 import Works from '../organisms/Works';
 import History from '../organisms/History';
-
-interface TitleObj {
-  [key: string]: string;
-}
-
-const pages = ['about', 'works', 'history', 'contact'];
-const titles: TitleObj = {
-  'about': 'About',
-  'works': 'Works',
-  'history': 'History',
-  'contact': 'Contact',
-}
+//templates
+import HomeLayout from '../templates/HomeLayout';
 
 const Home: React.FC = (props: any) => {
   const qs = queryString.parse(props.location.search);
-  const [query, setQuery] = useState(typeof qs.page === 'string' && pages.includes(qs.page) ? qs.page : 'about');
-
-  const onClick = (newQuery: string) => {
-    setQuery(newQuery);
-  }
-
-  useEffect(()=> {
-    props.history.push({
-      pathname: '/home',
-      search: `?page=${query}`
-    })
-  }, [query]);
+  const query = qs.page ? qs.page.toString() : 'about'
 
   return (
     <HomeLayout title="佐藤裕紀のポートフォリオサイト">
-      <Nav query={query} onClick={onClick}/>
+      <Nav />
       <Title
         theme={[TitleThemes.INIT]}
         propStyle={{textAlign: 'center'}}
       >
-        {titles[query]}
+        {capitalize(query)}
       </Title>
       {
         query === 'about' ? <About /> :

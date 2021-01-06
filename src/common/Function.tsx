@@ -5,3 +5,4 @@ export const CalcBeforeMonth_YM = (propDate: string, months: number) => {
   const date = new Date(parseInt(propDate.substr(0,4)), parseInt(propDate.substr(5,2))-1-months);
   return `${date.getFullYear()}/${ZeroPadding(date.getMonth() + 1)}`;
 };
+export const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();

@@ -10,11 +10,13 @@ interface ButtonProps {
 }
 
 export enum ButtonThemes {
-  INIT = 'INIT',
+  INIT     = 'INIT',
+  WORKMORE = 'WORKMORE',
 }
 
 enum ModifierClassNames {
-  INIT = 'button-init',
+  INIT     = 'button-init',
+  WORKMORE = 'button-work-more',
 }
 
 
@@ -26,13 +28,23 @@ const Button: React.FC<ButtonProps> = ({theme = [ButtonThemes.INIT], children, p
       {children}
       <style jsx>
         {`
-          .button{
+          .button {
             cursor: pointer;
-            display: flex;
+            display: inline-block;
             justify-content: center;
             align-items: center;
+            font-size: 20px;
+            color: ${CommonStyle.TextColor};
+            font-weight: bold;
+            padding: 0.5rem 4rem;
           }
           .button-init{
+          }
+
+          .button-work-more {
+            background-color: ${CommonStyle.BgColor};
+            filter: contrast(80%);
+            border: 3px solid ${CommonStyle.TextColor};
           }
           
         `}

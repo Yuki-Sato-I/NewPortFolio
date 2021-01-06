@@ -6,7 +6,7 @@ interface NavItemProps {
   theme?: NavItemThemes[];
   children?: React.ReactNode;
   propStyle?: {};
-  onClick: any;
+  onClick?: any;
 }
 
 export enum NavItemThemes {
