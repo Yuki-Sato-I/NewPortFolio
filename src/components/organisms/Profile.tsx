@@ -73,7 +73,10 @@ const Profile: React.FC<ProfileProps> = ({ }) => {
       </div>
       <div className="profile-section">
         <SubTitle>Profile</SubTitle>
-        <Text theme={[TextThemes.PROFILE]}>現在地方の大学3年。あることがきっかけでプログラミングを勉強し始める。初心者なので初心者がひっかりやすいものを主に投稿したい。sample</Text>
+        <Text theme={[TextThemes.PROFILE]}>
+          地方の大学4年生.独学で開発を学び,現在は都内のIT企業でフルリモートで働く.<br/>
+          個人で開発をすることも多いため,インフラからバックエンド,フロントエンドまで幅広い領域にわたって開発している.<br/>
+        </Text>
       </div>
       <div className="profile-section">
         <div className="sub">
