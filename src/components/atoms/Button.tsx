@@ -42,9 +42,8 @@ const Button: React.FC<ButtonProps> = ({theme = [ButtonThemes.INIT], children, p
           }
 
           .button-work-more {
-            background-color: ${CommonStyle.BgColor};
-            filter: contrast(80%);
-            border: 3px solid ${CommonStyle.TextColor};
+            background-color: ${CommonStyle.AccentColor};
+            color: white;
           }
           
         `}
