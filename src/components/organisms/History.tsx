@@ -111,7 +111,7 @@ const History: React.FC = () => {
           <div className="timeline-content">
             <SubTitle>全国情報処理学会 発表</SubTitle>
             <Text>
-              全国情報処理学会で発表予定.
+              全国情報処理学会,「人とロボットの協調作業における人間の位置予測」という題目で発表予定.
             </Text>
           </div>
         </li>
