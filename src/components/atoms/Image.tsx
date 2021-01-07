@@ -5,8 +5,8 @@ import CommonStyle from './../../common/CommonStyle';
 interface ImageProps {
   theme?: ImageThemes[];
   src: string;
-  height: number;
-  width: number;
+  height?: number;
+  width?: number;
   propStyle?: {};
   eye?: boolean;
 }
@@ -36,6 +36,11 @@ const Image: React.FC<ImageProps> = ({theme = [ImageThemes.INIT], src, height, w
         {`
           .image-wrapper {
             display: inline-block;
+          }
+
+          .image-wrapper img {
+            max-width: 100%;
+            height: auto;
           }
 
           .image-eye {

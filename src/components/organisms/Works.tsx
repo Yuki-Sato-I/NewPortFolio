@@ -14,26 +14,25 @@ const Works: React.FC = () => {
   const history = useHistory();
   const data = [
     {
-      image: './images/top_profile_1.png',
+      image: '/images/work1.jpg',
       title: 'title0',
-      content: 'これはtitleです.titleでtitleなのでtitleです.'
+      overview: 'これはtitleです.titleでtitleなのでtitleです.'
     },
     {
-      image: './images/top_profile_1.png',
+      image: '/images/work1.jpg',
       title: 'title1',
-      content: 'これはtitleです.lm;lm;m;mtitleでtitleなのでtitleです.'
+      overview: 'これはtitleです.lm;lm;m;mtitleでtitleなのでtitleです.'
     },
     {
-      image: './images/top_profile_1.png',
+      image: '/images/work1.jpg',
       title: 'title2',
-      content: 'これはtitleです.t;lmlmm;mitleでtitleなのでtitleです.'
+      overview: 'これはtitleです.t;lmlmm;mitleでtitleなのでtitleです.'
     },
   ]
 
   const goDetail = (selectedItemID: number) => {
     history.push({
       pathname: `/works/${selectedItemID}`,
-      state: { data: data[selectedItemID] }
     });
   }
 
@@ -48,7 +47,7 @@ const Works: React.FC = () => {
       </div>
       <div className="discription">
         <SubTitle>{data[selectedItemID].title}</SubTitle>
-        <Text>{data[selectedItemID].content}</Text>
+        <Text>{data[selectedItemID].overview}</Text>
       </div>
       <style jsx>{`
         .discription {

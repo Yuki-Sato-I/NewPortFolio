@@ -2,7 +2,6 @@ import React from 'react';
 // library
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { RouteName } from './common/Const';
-
 // components
 import Top from './components/pages/Top'
 import Home from './components/pages/Home'

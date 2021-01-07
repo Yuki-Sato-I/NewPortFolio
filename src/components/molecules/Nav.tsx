@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import queryString from 'query-string';
 import { stack as Menu } from 'react-burger-menu'
 import { Link, useHistory, useLocation } from 'react-router-dom';
-// common
-import CommonStyle from './../../common/CommonStyle';
-import { RouteName } from '../../common/Const';
 // atoms
 import NavItem, { NavItemThemes } from '../atoms/NavItem';
 import { capitalize } from '../../common/Function';
@@ -74,12 +71,17 @@ const Nav: React.FC<NavProps> = () => {
   const history = useHistory();
   const qs = queryString.parse(location.search);
   const [isOpen, setIsOpen] = useState(false);
-  const [query, setQuery] = useState(typeof qs.page === 'string' && pages.includes(qs.page) ? qs.page : 'about');
+  const [query, setQuery] = useState(qs.page ? (pages.includes(qs.page!.toString()) ? qs.page : 'about') : 'works');
 
   const onClick = (newQuery: string) => {
     setQuery(newQuery);
+    history.push({
+      pathname: '/home',
+      search: `?page=${newQuery}`
+    })
   }
 
+  // smart phone でうまくいかなかったので追加
   useEffect(()=> {
     if(location.pathname === '/home') {
       history.push({
