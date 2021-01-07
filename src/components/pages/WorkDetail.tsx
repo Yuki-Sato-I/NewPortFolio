@@ -105,7 +105,7 @@ const WorkDetail: React.FC = (props: any) => {
           padding: 10px 100px;
         }
 
-        @media only screen and (max-width: 1024px) {
+        @media only screen and (max-width: 1023px) {
           .image-wrapper {
             padding: 10px;
             text-align: center;

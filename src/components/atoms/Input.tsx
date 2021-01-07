@@ -32,6 +32,7 @@ const Input: React.FC<InputProps> = ({ id, theme = [InputThemes.INIT], propStyle
         <input
           name={name}
           placeholder={placeholder}
+          onChange={handleChange}
         />
       </div>
       <style jsx>{`
