@@ -30,6 +30,8 @@ const Text: React.FC<TextProps> = ({theme = [TextThemes.INIT], children, propSty
         {`
           .text {
             color: ${CommonStyle.TextColor};
+            white-space: 'pre-wrap';
+            line-height: 1.5rem;
           }
 
           .text-cloud {

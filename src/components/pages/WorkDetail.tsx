@@ -71,7 +71,7 @@ const WorkDetail: React.FC = (props: any) => {
           <SubTitle>公開日</SubTitle>
           <Text theme={[TextThemes.PROFILE]}>{workData[id].date}</Text>
           <SubTitle>詳細</SubTitle>
-          <Text theme={[TextThemes.PROFILE]} propStyle={{whiteSpace: 'pre-wrap'}}>{workData[id].content}</Text>
+          <Text theme={[TextThemes.PROFILE]}>{workData[id].content}</Text>
         </div>
       </div>
       <style jsx>{`
