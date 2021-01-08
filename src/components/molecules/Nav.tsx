@@ -82,15 +82,15 @@ const Nav: React.FC<NavProps> = () => {
     })
   }
 
-  // smart phone でうまくいかなかったので追加
-  useEffect(()=> {
-    if(location.pathname === '/home') {
-      history.push({
-        pathname: '/home',
-        search: `?page=${queryContext.query}`
-      })
-    }
-  }, [queryContext.query]);
+  // // smart phone でうまくいかなかったので追加
+  // useEffect(()=> {
+  //   if(location.pathname === '/home') {
+  //     history.push({
+  //       pathname: '/home',
+  //       search: `?page=${queryContext.query}`
+  //     })
+  //   }
+  // }, [queryContext.query]);
 
   return (
     <>

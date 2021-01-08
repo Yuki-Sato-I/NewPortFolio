@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import queryString from 'query-string';
 // common
 import { capitalize } from '../../common/Function';
@@ -17,7 +17,13 @@ import HomeLayout from '../templates/HomeLayout';
 
 const Home: React.FC = (props: any) => {
   const queryContext = useContext(QueryContext);
+  useEffect(() => {
+    const qs = queryString.parse(props.location.search);
+    queryContext.setQuery(qs.page);
+  }, [queryContext.query])
 
+  useEffect(() => {
+  }, [])
   return (
     <HomeLayout title="Portfolio | Yuki Sato">
       <Nav />
@@ -28,7 +34,7 @@ const Home: React.FC = (props: any) => {
         {capitalize(queryContext.query)}
       </Title>
       {queryContext.query === 'about' ? <About /> : ''}
-      {queryContext.query === 'works' ? <Works /> : ''}
+      {queryContext.query === 'works' ? <Works /> : 'works'}
       {queryContext.query === 'history' ? <History /> : ''}
       {queryContext.query === 'contact' ? <Contact /> : ''}
       {console.log(queryContext.query)}
