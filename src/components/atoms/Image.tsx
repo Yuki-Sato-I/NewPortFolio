@@ -1,6 +1,4 @@
 import React from 'react';
-// common
-import CommonStyle from './../../common/CommonStyle';
 
 interface ImageProps {
   theme?: ImageThemes[];
@@ -32,7 +30,7 @@ const Image: React.FC<ImageProps> = ({theme = [ImageThemes.INIT], src, height, m
   const modifierClasses = theme.map(data => ModifierClassNames[data]).join(' ');
   return (
     <p className={["image-wrapper", modifierClasses].join(' ')} style={propStyle}>
-      <img src={src} height={height} width={width} />
+      <img src={src} height={height} width={width} alt="portfolio-img"/>
       {eye ? <span className="eye" /> : ''}
       <style jsx>
         {`

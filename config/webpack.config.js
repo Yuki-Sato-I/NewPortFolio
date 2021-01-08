@@ -129,7 +129,7 @@ module.exports = function(webpackEnv) {
   };
 
   return {
-    mode: 'development',
+    mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
     // Stop compilation early in production
     bail: isEnvProduction,
     devtool: isEnvProduction

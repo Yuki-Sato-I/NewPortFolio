@@ -8,10 +8,7 @@ import Image, { ImageThemes } from '../atoms/Image';
 import SubTitle from '../atoms/SubTitle';
 import Text, { TextThemes } from '../atoms/Text';
 
-interface ProfileProps {
-}
-
-const Profile: React.FC<ProfileProps> = ({ }) => {
+const Profile: React.FC = () => {
   const [artist, setArtist] = useState('取得に失敗');
   const [name, setName] = useState('取得に失敗');
   const [key, setKey] = useState(process.env.REACT_APP_ACCESS_KEY);

@@ -6,10 +6,7 @@ import SubTitle from '../atoms/SubTitle';
 // moleciles
 import Icon from '../molecules/Icon';
 
-interface SkillProps {
-}
-
-const Skill: React.FC<SkillProps> = ({ }) => {
+const Skill: React.FC = () => {
 
   return (
     <div className="skill-wrapper">
