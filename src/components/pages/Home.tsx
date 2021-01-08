@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import queryString from 'query-string';
 // common
 import { capitalize } from '../../common/Function';
@@ -15,13 +15,12 @@ import History from '../organisms/History';
 import HomeLayout from '../templates/HomeLayout';
 
 const Home: React.FC = (props: any) => {
-  var qs = queryString.parse(props.location.search);
-  const [query, setQuery] = useState(qs.page ? qs.page.toString() : 'about')
+  const qs = queryString.parse(props.location.search);
+  const query = qs.page ? qs.page.toString() : 'about';
 
   useEffect(() => {
-    qs = queryString.parse(props.location.search);
-    setQuery(qs.page ? qs.page.toString() : 'about')
-  }, [props.location])
+    console.log(query)
+  },[qs])
 
   return (
     <HomeLayout title="Portfolio | Yuki Sato">
