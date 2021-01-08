@@ -27,12 +27,12 @@ const Home: React.FC = (props: any) => {
       >
         {capitalize(query)}
       </Title>
-      {
+      {/* {
         query === 'about' ? <About /> :
           query === 'works' ? <Works /> :
             query === 'history' ? <History /> :
               query === 'contact' ? <Contact /> : ''
-      }
+      } */}
     </HomeLayout>
   );
 }
