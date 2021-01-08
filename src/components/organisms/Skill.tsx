@@ -15,6 +15,7 @@ const Skill: React.FC<SkillProps> = ({ }) => {
     <div className="skill-wrapper">
       <SubTitle propStyle={{textAlign: 'center', fontSize: CommonStyle.TitleSize, marginBottom: '24px' }}>Skill Set</SubTitle>
       <Icon percentage={40} name="AWS" image="./images/skills/aws.png"/>
+      <Icon percentage={40} name="TypeScript" image="./images/skills/typescript.png"/>
       <Icon percentage={50} name="C" image="./images/skills/c.png"/>
       <Icon percentage={60} name="C#" image="./images/skills/csharp.png"/>
       <Icon percentage={70} name="CSS" image="./images/skills/css.png"/>

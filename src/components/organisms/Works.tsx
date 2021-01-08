@@ -14,19 +14,24 @@ const Works: React.FC = () => {
   const history = useHistory();
   const data = [
     {
-      image: '/images/work1.jpg',
-      title: 'title0',
-      overview: 'これはtitleです.titleでtitleなのでtitleです.'
+      image: '/images/work4.jpg',
+      title: 'covEAT',
+      overview: 'covEATはコロナ禍でも安心して外食ができるように飲食店の感染症対策をまとめたグルメサービス.\n感染症対策をしているお店だけが掲載されており,駅名検索をすることも可能.\n店舗数100件ほど掲載',
+    },
+    {
+      image: '/images/work3.jpg',
+      title: 'STOCKROOM',
+      overview: '「ひらめき」をストックしてタグで管理できるネタ帳アプリ.\nふとした時に出てきたアイデアのひらめきをストックし見返すことができる.\nまた,集めたひらめきをシャッフル機能によって掛け合わすことによって,考えつかなかったアイデアを生み出すことを促す.',
+    },
+    {
+      image: '/images/work2.jpg',
+      title: 'がんちゃんねる',
+      overview: '岩手大学情報一元化アプリ.\n大学内に散らばっている学生に必要な情報をまとめており,学校が紹介しているアルバイト情報や,大学生協,大学の情報など確認をすることができる.\niOS/Androidで公開している.\n累計約2,300インストール達成.',
     },
     {
       image: '/images/work1.jpg',
-      title: 'title1',
-      overview: 'これはtitleです.lm;lm;m;mtitleでtitleなのでtitleです.'
-    },
-    {
-      image: '/images/work1.jpg',
-      title: 'title2',
-      overview: 'これはtitleです.t;lmlmm;mitleでtitleなのでtitleです.'
+      title: '降水量お知らせbot(LINE bot)',
+      overview: '毎朝7時に降水量を自動で送ってくれるbot.\n地域設定ができ,最初に打ち込めば自動でその都道府県の降水量を教えてくれる.\n帰宅時のみ雨が降る時などの場合でも傘の持ち忘れを防ぐために作成.',
     },
   ]
 
@@ -47,7 +52,7 @@ const Works: React.FC = () => {
       </div>
       <div className="discription">
         <SubTitle>{data[selectedItemID].title}</SubTitle>
-        <Text>{data[selectedItemID].overview}</Text>
+        <Text propStyle={{maxWidth: '850px'}}>{data[selectedItemID].overview}</Text>
       </div>
       <style jsx>{`
         .discription {

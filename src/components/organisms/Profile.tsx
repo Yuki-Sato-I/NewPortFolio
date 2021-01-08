@@ -76,6 +76,7 @@ const Profile: React.FC<ProfileProps> = ({ }) => {
         <Text theme={[TextThemes.PROFILE]}>
           地方の大学4年生.独学で開発を学び,現在は都内のIT企業でフルリモートで働く.<br/>
           個人で開発をすることも多いため,インフラからバックエンド,フロントエンドまで幅広い領域にわたって開発している.<br/>
+          受託案件として開発したものや業務で開発しているものなど,許可を得ていないものはここには載せていません.
         </Text>
       </div>
       <div className="profile-section">

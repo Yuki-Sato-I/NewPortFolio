@@ -7,6 +7,8 @@ interface ImageProps {
   src: string;
   height?: number;
   width?: number;
+  maxHeight?: number;
+  maxWidth?: number;
   propStyle?: {};
   eye?: boolean;
 }
@@ -26,11 +28,11 @@ enum ModifierClassNames {
 }
 
 
-const Image: React.FC<ImageProps> = ({theme = [ImageThemes.INIT], src, height, width, propStyle = {}, eye}) => {
+const Image: React.FC<ImageProps> = ({theme = [ImageThemes.INIT], src, height, maxHeight, width, maxWidth, propStyle = {}, eye}) => {
   const modifierClasses = theme.map(data => ModifierClassNames[data]).join(' ');
   return (
     <p className={["image-wrapper", modifierClasses].join(' ')} style={propStyle}>
-      <img src={src} height={height} width={width}/>
+      <img src={src} height={height} width={width} />
       {eye ? <span className="eye" /> : ''}
       <style jsx>
         {`
@@ -39,7 +41,8 @@ const Image: React.FC<ImageProps> = ({theme = [ImageThemes.INIT], src, height, w
           }
 
           .image-wrapper img {
-            max-width: 100%;
+            max-width: ${maxWidth ? `${maxWidth}px` : '100%'};
+            max-height: ${maxHeight}px;
             height: auto;
           }
 
