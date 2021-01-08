@@ -33,9 +33,6 @@ const Home: React.FC = (props: any) => {
             query === 'history' ? <History /> :
               query === 'contact' ? <Contact /> : <React.Fragment />
       }
-      <style jsx>{`
-
-      `}</style>
     </HomeLayout>
   );
 }

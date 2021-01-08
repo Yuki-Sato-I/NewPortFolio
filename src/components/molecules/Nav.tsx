@@ -138,10 +138,6 @@ const Nav: React.FC<NavProps> = () => {
           float: left;
           left: 0;
         }
-
-        .link-style {
-
-        }
       `}</style>
     </>
   );

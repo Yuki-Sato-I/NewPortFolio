@@ -29,9 +29,6 @@ const SwiperComponent: React.FC<Props> = ({data, setSelectedItemID}) => {
           );
         })}
       </Swiper>
-      <style jsx>{`
-
-      `}</style>
     </div>
   );
 };
