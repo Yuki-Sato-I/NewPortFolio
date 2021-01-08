@@ -34,9 +34,9 @@ const Home: React.FC = (props: any) => {
       </Title>
       {
         query === 'about' ? <About /> :
-          query === 'works' ? <Works /> :
-            query === 'history' ? <History /> :
-              query === 'contact' ? <Contact /> : ''
+          (query === 'works' ? <Works /> :
+            (query === 'history' ? <History /> :
+              (query === 'contact' ? <Contact /> : '')))
       }
     </HomeLayout>
   );

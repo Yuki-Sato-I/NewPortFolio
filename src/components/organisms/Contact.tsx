@@ -27,9 +27,7 @@ const Contact: React.FC = () => {
       <Input placeholder='' handleChange={handleChange} label='Title' name="title" propStyle={{margin: '0 auto'}} />
       <Input placeholder='' handleChange={handleChange} label='Email' name="email" propStyle={{margin: '0 auto'}} />
       <Textarea handleChange={handleChange} label='Content' content='' name='content' propStyle={{margin: '0 auto'}} />
-      <div>
-        <Button theme={[ButtonThemes.WORKMORE]} onClick={send} propStyle={{margin: '20px', backgroundColor: 'lightgray'}}>send(停止中)</Button>
-      </div>
+      <Button theme={[ButtonThemes.WORKMORE]} onClick={send} propStyle={{margin: '20px', backgroundColor: 'lightgray'}}>send(停止中)</Button>
       <style jsx>{`
         .contact-wrapper {
           text-align: center;
