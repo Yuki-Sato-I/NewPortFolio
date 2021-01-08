@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import queryString from 'query-string';
 // common
 import { capitalize } from '../../common/Function';
@@ -18,9 +18,13 @@ const Home: React.FC = (props: any) => {
   const qs = queryString.parse(props.location.search);
   const [query, setQuery] = useState(qs.page && typeof qs.page === 'string' ? qs.page : 'about');
 
+  const getQuery = (newQuery: string) => {
+    setQuery(newQuery);
+  }
+
   return (
     <HomeLayout title="Portfolio | Yuki Sato">
-      <Nav set={setQuery}/>
+      <Nav getQuery={getQuery}/>
       <Title
         theme={[TitleThemes.INIT]}
         propStyle={{textAlign: 'center'}}

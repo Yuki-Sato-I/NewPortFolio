@@ -7,7 +7,7 @@ import NavItem, { NavItemThemes } from '../atoms/NavItem';
 import { capitalize } from '../../common/Function';
 
 interface NavProps {
-  set?: any;
+  getQuery?: (item: string) => void;
 }
 
 var styles = {
@@ -66,7 +66,7 @@ var linkStyle ={
 
 const pages = ['about', 'works', 'history', 'contact'];
 
-const Nav: React.FC<NavProps> = ({set}) => {
+const Nav: React.FC<NavProps> = ({getQuery}) => {
   const location = useLocation();
   const history = useHistory();
   const qs = queryString.parse(location.search);
@@ -75,7 +75,9 @@ const Nav: React.FC<NavProps> = ({set}) => {
 
   const onClick = (newQuery: string) => {
     setQuery(newQuery);
-    set(newQuery);
+    if(getQuery){
+      getQuery(newQuery);
+    }
     history.push({
       pathname: '/home',
       search: `?page=${newQuery}`
@@ -99,7 +101,9 @@ const Nav: React.FC<NavProps> = ({set}) => {
           return (
               <NavItem
                 theme={query === item.toLowerCase() ? [NavItemThemes.SELECTED] : []}
-                onClick={() => onClick(item)}
+                onClick={() => {
+                  onClick(item);
+                }}
                 key={item}
               >
                 {capitalize(item)}
