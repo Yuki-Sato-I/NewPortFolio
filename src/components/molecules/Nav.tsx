@@ -68,7 +68,7 @@ const pages = ['about', 'works', 'history', 'contact'];
 
 const Nav: React.FC<NavProps> = () => {
   const queryContext = useContext(QueryContext);
-  const location = useLocation();
+  // const location = useLocation();
   const history = useHistory();
   // const qs = queryString.parse(location.search);
   const [isOpen, setIsOpen] = useState(false);
@@ -82,7 +82,7 @@ const Nav: React.FC<NavProps> = () => {
     })
   }
 
-  // // smart phone でうまくいかなかったので追加
+  // smart phone でうまくいかなかったので追加
   // useEffect(()=> {
   //   if(location.pathname === '/home') {
   //     history.push({

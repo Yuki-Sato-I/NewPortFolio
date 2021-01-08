@@ -14,16 +14,20 @@ import Works from '../organisms/Works';
 import History from '../organisms/History';
 //templates
 import HomeLayout from '../templates/HomeLayout';
+import { useHistory } from 'react-router-dom';
 
 const Home: React.FC = (props: any) => {
   const queryContext = useContext(QueryContext);
-  useEffect(() => {
-    const qs = queryString.parse(props.location.search);
-    queryContext.setQuery(qs.page);
-  }, [queryContext.query])
+  const history = useHistory();
 
   useEffect(() => {
-  }, [])
+    if(props.location.pathname === '/home') {
+      history.push({
+        pathname: '/home',
+        search: `?page=${queryContext.query}`
+      })
+    }
+  }, [queryContext.query])
   return (
     <HomeLayout title="Portfolio | Yuki Sato">
       <Nav />
@@ -31,10 +35,10 @@ const Home: React.FC = (props: any) => {
         theme={[TitleThemes.INIT]}
         propStyle={{textAlign: 'center'}}
       >
-        {capitalize(queryContext.query)}
+        {queryContext.query ? capitalize(queryContext.query) : ''}
       </Title>
       {queryContext.query === 'about' ? <About /> : ''}
-      {queryContext.query === 'works' ? <Works /> : 'works'}
+      {queryContext.query === 'works' ? <Works /> : ''}
       {queryContext.query === 'history' ? <History /> : ''}
       {queryContext.query === 'contact' ? <Contact /> : ''}
       {console.log(queryContext.query)}
