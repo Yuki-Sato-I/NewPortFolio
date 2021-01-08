@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import queryString from 'query-string';
 import { stack as Menu } from 'react-burger-menu'
 import { Link, useHistory, useLocation } from 'react-router-dom';
 // atoms
 import NavItem, { NavItemThemes } from '../atoms/NavItem';
 import { capitalize } from '../../common/Function';
+import { QueryContext } from '../../App';
 
 interface NavProps {
-  getQuery?: (item: string) => void;
 }
 
 var styles = {
@@ -66,18 +66,16 @@ var linkStyle ={
 
 const pages = ['about', 'works', 'history', 'contact'];
 
-const Nav: React.FC<NavProps> = ({getQuery}) => {
+const Nav: React.FC<NavProps> = () => {
+  const queryContext = useContext(QueryContext);
   const location = useLocation();
   const history = useHistory();
-  const qs = queryString.parse(location.search);
+  // const qs = queryString.parse(location.search);
   const [isOpen, setIsOpen] = useState(false);
-  const [query, setQuery] = useState(qs.page ? (pages.includes(qs.page!.toString()) ? qs.page : 'about') : 'works');
+  // const [query, setQuery] = useState(qs.page ? (pages.includes(qs.page!.toString()) ? qs.page : 'about') : 'works');
 
   const onClick = (newQuery: string) => {
-    setQuery(newQuery);
-    if(getQuery){
-      getQuery(newQuery);
-    }
+    queryContext.setQuery(newQuery);
     history.push({
       pathname: '/home',
       search: `?page=${newQuery}`
@@ -89,10 +87,10 @@ const Nav: React.FC<NavProps> = ({getQuery}) => {
     if(location.pathname === '/home') {
       history.push({
         pathname: '/home',
-        search: `?page=${query}`
+        search: `?page=${queryContext.query}`
       })
     }
-  }, [query]);
+  }, [queryContext.query]);
 
   return (
     <>
@@ -100,7 +98,7 @@ const Nav: React.FC<NavProps> = ({getQuery}) => {
         {pages.map((item: string) => {
           return (
               <NavItem
-                theme={query === item.toLowerCase() ? [NavItemThemes.SELECTED] : []}
+                theme={queryContext.query === item.toLowerCase() ? [NavItemThemes.SELECTED] : []}
                 onClick={() => {
                   onClick(item);
                 }}

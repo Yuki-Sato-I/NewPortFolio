@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import queryString from 'query-string';
 // common
 import { capitalize } from '../../common/Function';
+import { QueryContext } from './../../App'
 // atoms
 import Title, { TitleThemes } from '../atoms/Title';
 // molecules
@@ -15,27 +16,22 @@ import History from '../organisms/History';
 import HomeLayout from '../templates/HomeLayout';
 
 const Home: React.FC = (props: any) => {
-  const qs = queryString.parse(props.location.search);
-  const [query, setQuery] = useState(qs.page && typeof qs.page === 'string' ? qs.page : 'about');
-
-  const getQuery = (newQuery: string) => {
-    setQuery(newQuery);
-  }
+  const queryContext = useContext(QueryContext);
 
   return (
     <HomeLayout title="Portfolio | Yuki Sato">
-      <Nav getQuery={getQuery}/>
+      <Nav />
       <Title
         theme={[TitleThemes.INIT]}
         propStyle={{textAlign: 'center'}}
       >
-        {capitalize(query)}
+        {capitalize(queryContext.query)}
       </Title>
-      {query === 'about' ? <About /> : ''}
-      {/* {query === 'works' ? <Works /> : ''} */}
-      {query === 'history' ? <History /> : ''}
-      {/* {query === 'contact' ? <Contact /> : ''} */}
-      {console.log(query)}
+      {queryContext.query === 'about' ? <About /> : ''}
+      {queryContext.query === 'works' ? <Works /> : ''}
+      {queryContext.query === 'history' ? <History /> : ''}
+      {queryContext.query === 'contact' ? <Contact /> : ''}
+      {console.log(queryContext.query)}
     </HomeLayout>
   );
 }
