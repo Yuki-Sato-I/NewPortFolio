@@ -7,7 +7,7 @@ import NavItem, { NavItemThemes } from '../atoms/NavItem';
 import { capitalize } from '../../common/Function';
 
 interface NavProps {
-  onClick?: any;
+  set?: any;
 }
 
 var styles = {
@@ -66,7 +66,7 @@ var linkStyle ={
 
 const pages = ['about', 'works', 'history', 'contact'];
 
-const Nav: React.FC<NavProps> = () => {
+const Nav: React.FC<NavProps> = ({ set }) => {
   const location = useLocation();
   const history = useHistory();
   const qs = queryString.parse(location.search);
@@ -75,6 +75,7 @@ const Nav: React.FC<NavProps> = () => {
 
   const onClick = (newQuery: string) => {
     setQuery(newQuery);
+    set(newQuery);
     history.push({
       pathname: '/home',
       search: `?page=${newQuery}`
