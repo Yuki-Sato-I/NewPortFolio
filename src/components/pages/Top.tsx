@@ -1,14 +1,15 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
+// atoms
+import Image, { ImageThemes } from '../atoms/Image';
 // molecules
 import Cloud from './../molecules/Cloud'
-// common
-import CommonStyle from './../../common/CommonStyle';
+// templates
 import HomeLayout from '../templates/HomeLayout';
-import Image, { ImageThemes } from '../atoms/Image';
 
 const topSelect = ["About", "Works"]
 const bottomSelect = ["History", "Contact"]
-
+// 現在はこのページ使わない
 const Top: React.FC = () => {
   const [mark, setMark] = useState(false);
   const onMouseOver = () => {
@@ -20,7 +21,9 @@ const Top: React.FC = () => {
   }
 
   return (
-    <HomeLayout title="佐藤裕紀のポートフォリオサイト">
+    true ?
+    <Redirect to="/home?page=about" /> :
+    <HomeLayout title="Portfolio | Yuki Sato">
       <div className="clouds-container">
         {topSelect.map((select: string) => <Cloud key={`cloud_${select}`} text={select} onMouseOver={onMouseOver} onMouseOut={onMouseOut} />)}
       </div>

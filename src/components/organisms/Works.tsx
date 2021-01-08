@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 // common
-import CommonStyle from '../../common/CommonStyle';
 import Button, { ButtonThemes } from '../atoms/Button';
 // atoms
 import SubTitle from '../atoms/SubTitle';
-import Text, { TextThemes } from '../atoms/Text';
+import Text from '../atoms/Text';
 // molecules
 import SwiperComponent from '../molecules/SwiperComponent';
 

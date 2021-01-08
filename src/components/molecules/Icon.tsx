@@ -4,7 +4,7 @@ import { Doughnut } from 'react-chartjs-2';
 import CommonStyle from '../../common/CommonStyle';
 // atoms
 import Image, { ImageThemes } from '../atoms/Image';
-import Text, { TextThemes } from '../atoms/Text';
+import Text from '../atoms/Text';
 
 interface IconProps {
   image: string;

@@ -1,6 +1,4 @@
 import React from 'react';
-// common
-import CommonStyle from './../../common/CommonStyle';
 // atoms
 import Text, { TextThemes } from '../atoms/Text';
 import Image from '../atoms/Image';

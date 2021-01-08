@@ -1,9 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
-// atoms
-import Text, { TextThemes } from '../atoms/Text';
-import SubTitle, { SubTitleThemes } from '../atoms/SubTitle';
-// molecules
-import Cloud from './../molecules/Cloud'
+import React from 'react';
 // organisms
 import Profile from './Profile';
 import Skill from './Skill';

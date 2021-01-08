@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-feather';
 // common
 import CommonStyle from './../../common/CommonStyle';

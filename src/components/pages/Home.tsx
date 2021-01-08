@@ -19,7 +19,7 @@ const Home: React.FC = (props: any) => {
   const query = qs.page ? qs.page.toString() : 'about'
 
   return (
-    <HomeLayout title="佐藤裕紀のポートフォリオサイト">
+    <HomeLayout title="Portfolio | Yuki Sato">
       <Nav />
       <Title
         theme={[TitleThemes.INIT]}
