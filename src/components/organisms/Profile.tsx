@@ -54,14 +54,27 @@ const Profile: React.FC<ProfileProps> = ({ }) => {
 
   return (
     <div className="profile-wrapper">
-      <div className="profile-image">
-        <Image 
-          src='./images/profile001.png'
-          theme={[ImageThemes.PROFILE]}
-          height={250}
-          width={250}
-          propStyle={{ borderRadius: '50%', border: `10px solid ${CommonStyle.BorderColor}` }}
-        />
+      <div className="flip-boards">
+        <div className="profile-image">
+          <div className="front">
+            <Image 
+              src='./images/profile001.png'
+              theme={[ImageThemes.PROFILE]}
+              height={250}
+              width={250}
+              propStyle={{ borderRadius: '50%', border: `10px solid ${CommonStyle.BorderColor}` }}
+            />
+          </div>
+          <div className="flipped">
+            <Image 
+              src='./images/me.jpg'
+              theme={[ImageThemes.PROFILE]}
+              height={250}
+              width={250}
+              propStyle={{ borderRadius: '50%', border: `10px solid ${CommonStyle.BorderColor}` }}
+            />
+          </div>
+        </div>
       </div>
       <div className="profile-text profile-section">
         <SubTitle>Name</SubTitle>
@@ -115,14 +128,57 @@ const Profile: React.FC<ProfileProps> = ({ }) => {
           margin-bottom: 64px;
         }
 
-        .profile-image {
-          display: inline-block;
+        .flip-boards {
+          //margin-left: -600px;
+          position: relative;
         }
+
+        .profile-image {
+          cursor: pointer;
+          position: absolute;
+          left: 0;
+          width: 250px;
+          -webkit-transform-style: preserve-3d;
+          -moz-transform-style: preserve-3d;
+          -ms-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+          -webkit-transition: all 1s ease;
+          -moz-transition: all 1s ease;
+          -ms-transition: all 1s ease;
+          transition: all 1s ease;
+        }
+
+        .profile-image div {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          -webkit-backface-visibility: hidden;
+          -moz-backface-visibility: hidden;
+          -ms-backface-visibility: hidden;
+          backface-visibility: hidden;
+        }
+
+        .flip-boards .profile-image:hover {
+          -webkit-transform: rotateY( 180deg );
+          -moz-transform: rotateY( 180deg );
+          -ms-transform: rotateY( 180deg );
+          transform: rotateY( 180deg );
+        }
+
+        .flip-boards .profile-image .flipped{
+          -webkit-transform: rotateY( 180deg );
+          -moz-transform: rotateY( 180deg );
+          -ms-transform: rotateY( 180deg );
+          transform: rotateY( 180deg );
+        }
+
         .profile-text {
           padding: 0 64px;
           display: inline-block;
           width: calc(100% - 400px);
           vertical-align: top;
+          margin-left: 250px;
         }
 
         .sub {
@@ -150,14 +206,21 @@ const Profile: React.FC<ProfileProps> = ({ }) => {
 
         @media only screen and (max-width: 1024px) {
           .profile-image {
+            left: 0;
+            right: 0;
+            margin: auto;
+          }
+          .flip-boards {
             display: block;
             text-align: center;
+            margin: 0;
           }
           .profile-text {
             display: block;
             width: 100%;
             margin: 0 auto;
             padding: 0;
+            padding-top: 300px;
           }
           .song-wrapper {
             width: calc(100% - 100px);
