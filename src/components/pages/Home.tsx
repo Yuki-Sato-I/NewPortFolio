@@ -32,9 +32,10 @@ const Home: React.FC = (props: any) => {
         {capitalize(query)}
       </Title>
       {query === 'about' ? <About /> : ''}
-      {query === 'works' ? <Works /> : ''}
+      {/* {query === 'works' ? <Works /> : ''} */}
       {query === 'history' ? <History /> : ''}
-      {query === 'contact' ? <Contact /> : ''}
+      {/* {query === 'contact' ? <Contact /> : ''} */}
+      {console.log(query)}
     </HomeLayout>
   );
 }
