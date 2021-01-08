@@ -66,7 +66,7 @@ var linkStyle ={
 
 const pages = ['about', 'works', 'history', 'contact'];
 
-const Nav: React.FC<NavProps> = ({ set }) => {
+const Nav: React.FC<NavProps> = ({set}) => {
   const location = useLocation();
   const history = useHistory();
   const qs = queryString.parse(location.search);

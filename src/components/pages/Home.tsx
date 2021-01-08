@@ -16,7 +16,7 @@ import HomeLayout from '../templates/HomeLayout';
 
 const Home: React.FC = (props: any) => {
   const qs = queryString.parse(props.location.search);
-  const [query, setQuery] = useState(qs.page && typeof(qs.page) === 'string' ? qs.page : 'about');
+  const [query, setQuery] = useState(qs.page && typeof qs.page === 'string' ? qs.page : 'about');
 
   return (
     <HomeLayout title="Portfolio | Yuki Sato">
@@ -30,7 +30,8 @@ const Home: React.FC = (props: any) => {
       {
         query === 'about' ? <About /> :
           query === 'works' ? <Works /> :
-            query === 'history' ? <History /> : <Contact /> 
+            query === 'history' ? <History /> : 
+              query === 'contact' ?  <Contact /> : <About />
       }
     </HomeLayout>
   );
