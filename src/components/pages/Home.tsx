@@ -30,8 +30,7 @@ const Home: React.FC = (props: any) => {
       {
         query === 'about' ? <About /> :
           query === 'works' ? <Works /> :
-            query === 'history' ? <History /> :
-              query === 'contact' ? <Contact /> : ''
+            query === 'history' ? <History /> : <Contact /> 
       }
     </HomeLayout>
   );
