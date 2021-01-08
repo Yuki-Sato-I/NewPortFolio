@@ -3,7 +3,7 @@ import React from 'react';
 import Profile from './Profile';
 import Skill from './Skill';
 
-const About: React.FC = (props: any) => {
+const About: React.FC = () => {
 
   return (
     <div className="about-wrapper">

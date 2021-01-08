@@ -30,7 +30,6 @@ const Title: React.FC<TitleProps> = ({theme = [TitleThemes.INIT], children, prop
             padding: 3rem;
           }
 
-
           .title-init {
           }
 
