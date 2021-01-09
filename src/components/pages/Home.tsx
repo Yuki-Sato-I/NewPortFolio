@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import queryString from 'query-string';
 // common
 import { capitalize } from '../../common/Function';
-import { QueryContext } from './../../App'
+import { QueryContext } from '../../provider/Provider';
 // atoms
 import Title, { TitleThemes } from '../atoms/Title';
 // molecules
@@ -18,16 +18,7 @@ import { useHistory } from 'react-router-dom';
 
 const Home: React.FC = (props: any) => {
   const queryContext = useContext(QueryContext);
-  const history = useHistory();
 
-  useEffect(() => {
-    if(props.location.pathname === '/home') {
-      history.push({
-        pathname: '/home',
-        search: `?page=${queryContext.query}`
-      })
-    }
-  }, [queryContext.query])
   return (
     <HomeLayout title="Portfolio | Yuki Sato">
       <Nav />

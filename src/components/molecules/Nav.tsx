@@ -5,8 +5,7 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 // atoms
 import NavItem, { NavItemThemes } from '../atoms/NavItem';
 import { capitalize } from '../../common/Function';
-import { QueryContext } from '../../App';
-
+import { QueryContext } from '../../provider/Provider';
 interface NavProps {
 }
 
@@ -68,29 +67,11 @@ const pages = ['about', 'works', 'history', 'contact'];
 
 const Nav: React.FC<NavProps> = () => {
   const queryContext = useContext(QueryContext);
-  // const location = useLocation();
-  const history = useHistory();
-  // const qs = queryString.parse(location.search);
   const [isOpen, setIsOpen] = useState(false);
-  // const [query, setQuery] = useState(qs.page ? (pages.includes(qs.page!.toString()) ? qs.page : 'about') : 'works');
 
   const onClick = (newQuery: string) => {
     queryContext.setQuery(newQuery);
-    history.push({
-      pathname: '/home',
-      search: `?page=${newQuery}`
-    })
   }
-
-  // smart phone でうまくいかなかったので追加
-  // useEffect(()=> {
-  //   if(location.pathname === '/home') {
-  //     history.push({
-  //       pathname: '/home',
-  //       search: `?page=${queryContext.query}`
-  //     })
-  //   }
-  // }, [queryContext.query]);
 
   return (
     <>
