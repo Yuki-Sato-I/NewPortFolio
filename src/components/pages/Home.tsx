@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from 'react';
-import queryString from 'query-string';
+import React, { useContext } from 'react';
 // common
 import { capitalize } from '../../common/Function';
 import { QueryContext } from '../../provider/Provider';
@@ -14,9 +13,8 @@ import Works from '../organisms/Works';
 import History from '../organisms/History';
 //templates
 import HomeLayout from '../templates/HomeLayout';
-import { useHistory } from 'react-router-dom';
 
-const Home: React.FC = (props: any) => {
+const Home: React.FC = () => {
   const queryContext = useContext(QueryContext);
 
   return (
@@ -28,11 +26,10 @@ const Home: React.FC = (props: any) => {
       >
         {queryContext.query ? capitalize(queryContext.query) : ''}
       </Title>
-      {queryContext.query === 'about' ? <About /> : ''}
-      {queryContext.query === 'works' ? <Works /> : ''}
-      {queryContext.query === 'history' ? <History /> : ''}
-      {queryContext.query === 'contact' ? <Contact /> : ''}
-      {console.log(queryContext.query)}
+      {queryContext.query === 'about' ? <About /> :
+        queryContext.query === 'works' ? <Works /> :
+          queryContext.query === 'history' ? <History /> :
+            queryContext.query === 'contact' ? <Contact /> : <React.Fragment />}
     </HomeLayout>
   );
 }

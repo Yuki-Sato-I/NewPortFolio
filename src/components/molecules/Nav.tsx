@@ -1,15 +1,12 @@
-import React, { useContext, useEffect, useState } from 'react';
-import queryString from 'query-string';
+import React, { useContext, useState } from 'react';
 import { stack as Menu } from 'react-burger-menu'
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // atoms
 import NavItem, { NavItemThemes } from '../atoms/NavItem';
 import { capitalize } from '../../common/Function';
 import { QueryContext } from '../../provider/Provider';
-interface NavProps {
-}
 
-var styles = {
+const styles = {
   bmBurgerButton: {
     position: 'fixed',
     width: '36px',
@@ -55,7 +52,7 @@ var styles = {
   }
 }
 
-var linkStyle ={
+const linkStyle ={
   display: 'block',
   padding: '16px 8px',
   textDecoration: 'none',
@@ -65,7 +62,7 @@ var linkStyle ={
 
 const pages = ['about', 'works', 'history', 'contact'];
 
-const Nav: React.FC<NavProps> = () => {
+const Nav: React.FC = () => {
   const queryContext = useContext(QueryContext);
   const [isOpen, setIsOpen] = useState(false);
 
