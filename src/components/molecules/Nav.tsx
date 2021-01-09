@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { stack as Menu } from 'react-burger-menu'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 // atoms
 import NavItem, { NavItemThemes } from '../atoms/NavItem';
 import { capitalize } from '../../common/Function';
@@ -64,6 +64,7 @@ const pages = ['about', 'works', 'history', 'contact'];
 
 const Nav: React.FC = () => {
   const queryContext = useContext(QueryContext);
+  const history = useHistory();
   const [isOpen, setIsOpen] = useState(false);
 
   const onClick = (newQuery: string) => {
@@ -103,6 +104,10 @@ const Nav: React.FC = () => {
                   onClick={() => {
                     setIsOpen(false);
                     onClick(item);
+                    history.push({
+                      pathname: '/home',
+                      search: `?page=${item}`
+                    })
                   }}
                   key={item}
                   className="link-style"
