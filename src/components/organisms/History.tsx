@@ -120,7 +120,7 @@ const History: React.FC = () => {
           <div className="timeline-content">
             <SubTitle>全国情報処理学会 発表</SubTitle>
             <Text>
-              全国情報処理学会,「人とロボットの協調作業における人間の位置予測」という題目で発表.
+              全国情報処理学会,「人とロボットの協調作業における人間の位置予測」という題目で発表.<br/>
               学生奨励賞を受賞.
             </Text>
           </div>
@@ -130,7 +130,7 @@ const History: React.FC = () => {
           <div className="timeline-content">
             <SubTitle>岩手大学 卒業</SubTitle>
             <Text>
-              岩手大学 卒業.卒業式は中止.
+              岩手大学 卒業.卒業式は中止.<br/>
               (余談. 小学校の時も震災で正式な卒業式は中止になったので, 人生で, 最初と最後の卒業式に参加してません)
             </Text>
           </div>
