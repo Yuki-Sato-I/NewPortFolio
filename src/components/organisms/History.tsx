@@ -63,7 +63,7 @@ const History: React.FC = () => {
             <SubTitle>都内IT企業での長期インターン</SubTitle>
             <Text>
               goとReactを使った,LMS(Learning Management System)の開発に携わる.現在も続けている.<br/>
-              (2021-1現在)
+              (2021-3現在)
             </Text>
           </div>
         </li>
@@ -109,9 +109,19 @@ const History: React.FC = () => {
         <li>
           <p className="timeline-date">2021-3</p>
           <div className="timeline-content">
+            <SubTitle>iFive 特別賞受賞</SubTitle>
+            <Text>
+              学内カンパニーのなかで,成果などを出したカンパニーに送られる賞を受賞.
+            </Text>
+          </div>
+        </li>
+        <li>
+          <p className="timeline-date">2021-3</p>
+          <div className="timeline-content">
             <SubTitle>全国情報処理学会 発表</SubTitle>
             <Text>
-              全国情報処理学会,「人とロボットの協調作業における人間の位置予測」という題目で発表予定.
+              全国情報処理学会,「人とロボットの協調作業における人間の位置予測」という題目で発表.
+              学生奨励賞を受賞.
             </Text>
           </div>
         </li>
@@ -120,7 +130,8 @@ const History: React.FC = () => {
           <div className="timeline-content">
             <SubTitle>岩手大学 卒業</SubTitle>
             <Text>
-              岩手大学 卒業予定
+              岩手大学 卒業.卒業式は中止.
+              (余談. 小学校の時も震災で正式な卒業式は中止になったので, 人生で, 最初と最後の卒業式に参加してません)
             </Text>
           </div>
         </li>
@@ -129,7 +140,7 @@ const History: React.FC = () => {
           <div className="timeline-content">
             <SubTitle>都内本社IT企業 就職</SubTitle>
             <Text>
-              就職予定.
+              就職.勤務地都内
             </Text>
           </div>
         </li>
