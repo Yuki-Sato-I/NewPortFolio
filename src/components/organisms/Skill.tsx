@@ -17,7 +17,6 @@ const Skill: React.FC = () => {
       <Icon percentage={100} name="Java" image="./images/skills/java.png"/>
       <Icon percentage={100} name="Spring Boot" image="./images/skills/springboot.png"/>
       <Icon percentage={100} name="Spring Batch" image="./images/skills/springbatch.png"/>
-      <Icon percentage={100} name="Java" image="./images/skills/java.png"/>
       <Icon percentage={100} name="Ruby" image="./images/skills/ruby.png"/>
       <Icon percentage={100} name="Ruby on Rails" image="./images/skills/rails.png"/>
       <Icon percentage={100} name="Go" image="./images/skills/go.png"/>
