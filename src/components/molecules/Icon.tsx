@@ -41,9 +41,7 @@ const Icon: React.FC<IconProps> = ({ image, percentage, name }) => {
         </div>
         <Image height={cicleSize} width={cicleSize} src={image} theme={[ImageThemes.SKILL]} propStyle={{borderRadius: '50%', height: `${cicleSize}px`, width: `${cicleSize}px`, position: 'absolute', zInedex: 122, top: '29px'}}/>
       </div>
-
       <Text propStyle={{textAlign: 'center', fontWeight: 'bold', fontSize: '20px', padding: '5px'}}>{name}</Text>
-      <Text propStyle={{textAlign: 'center', fontSize: '20px'}}>{percentage}%</Text>
       <style jsx>{`
         .icon-wrapper {
           display: inline-block;

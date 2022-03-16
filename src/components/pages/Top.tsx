@@ -31,7 +31,7 @@ const Top: React.FC = () => {
         {bottomSelect.map((select: string) => <Cloud key={`cloud_${select}`} text={select} onMouseOver={onMouseOver} onMouseOut={onMouseOut} />)}
       </div>
       <div className="profile-image-container">
-        {mark ? <Image theme={[ImageThemes.INIT]} src='./images/bikkuri.png' width={200} height={200} propStyle={{display: 'block'}}/> : <React.Fragment/>}
+        {mark && <Image theme={[ImageThemes.INIT]} src='./images/bikkuri.png' width={200} height={200} propStyle={{display: 'block'}}/>}
         <Image theme={[ImageThemes.EYE]} src="./images/top_profile_1.png" width={350} height={350} />
       </div>
       <style jsx>{`

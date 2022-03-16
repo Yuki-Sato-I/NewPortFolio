@@ -7,6 +7,7 @@ import CommonStyle from '../../common/CommonStyle';
 import Image, { ImageThemes } from '../atoms/Image';
 import SubTitle from '../atoms/SubTitle';
 import Text, { TextThemes } from '../atoms/Text';
+import { getAge } from '../../common/Function';
 
 const Profile: React.FC = () => {
   const [artist, setArtist] = useState('取得に失敗');
@@ -77,15 +78,14 @@ const Profile: React.FC = () => {
         <SubTitle>Name</SubTitle>
         <Text theme={[TextThemes.PROFILE]}>Yuki Sato</Text>
         <SubTitle>Age</SubTitle>
-        <Text theme={[TextThemes.PROFILE]}>22</Text>
+        <Text theme={[TextThemes.PROFILE]}>{getAge()}</Text>
         <SubTitle>Occupation</SubTitle>
-        <Text theme={[TextThemes.PROFILE]}>University Student / Engineer</Text>
+        <Text theme={[TextThemes.PROFILE]}>Engineer</Text>
       </div>
       <div className="profile-section">
         <SubTitle>Profile</SubTitle>
         <Text theme={[TextThemes.PROFILE]}>
-          地方の大学4年生.独学で開発を学び,現在は都内のIT企業でフルリモートで働く.<br/>
-          個人で開発をすることも多いため,インフラからバックエンド,フロントエンドまで幅広い領域にわたって開発している.<br/>
+          本業は都内の某通信企業勤務.上流工程が多いが直近では大容量レコードを捌くバッチアプリケーションの作成も同時に行っている.副業では都内のIT企業で働いており,Webアプリケーションの開発を行う.<br/>
           受託案件として開発したものや業務で開発しているものなど,許可を得ていないものはここには載せていません.
         </Text>
       </div>

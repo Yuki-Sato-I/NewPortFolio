@@ -24,7 +24,7 @@ const Home: React.FC = () => {
         theme={[TitleThemes.INIT]}
         propStyle={{textAlign: 'center'}}
       >
-        {queryContext.query ? capitalize(queryContext.query) : ''}
+        {queryContext.query && capitalize(queryContext.query)}
       </Title>
       {queryContext.query === 'about' ? <About /> :
         queryContext.query === 'works' ? <Works /> :
