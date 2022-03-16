@@ -10,7 +10,7 @@ const Skill: React.FC = () => {
 
   return (
     <div className="skill-wrapper">
-      <SubTitle propStyle={{textAlign: 'center', fontSize: CommonStyle.TitleSize, marginBottom: '24px' }}>Skill Set(アプリリリース等したことがあるもの)</SubTitle>
+      <SubTitle propStyle={{textAlign: 'center', fontSize: CommonStyle.TitleSize, marginBottom: '24px' }}>Skill Set(アプリリリース等)</SubTitle>
       <Icon percentage={100} name="React" image="./images/skills/react.png"/>
       <Icon percentage={100} name="TypeScript" image="./images/skills/typescript.png"/>
       <Icon percentage={100} name="JavaScript" image="./images/skills/js.png"/>
