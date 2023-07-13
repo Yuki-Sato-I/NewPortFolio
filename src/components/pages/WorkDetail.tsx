@@ -73,7 +73,7 @@ const WorkDetail: React.FC = (props: any) => {
           {workData[id].overview}
         </div>
         <div className="section">
-          <SubTitle>関連URL { workData[id].url && <a href={workData[id].url} target='_blank' rel="noopener noreferrer" style={{color: CommonStyle.TextColor}}><Link style={{verticalAlign: 'top'}}/></a> }</SubTitle>
+          { workData[id].url && <SubTitle>関連URL <a href={workData[id].url} target='_blank' rel="noopener noreferrer" style={{color: CommonStyle.TextColor}}><Link style={{verticalAlign: 'top'}}/></a> </SubTitle> }
           <SubTitle>公開日</SubTitle>
           <Text theme={[TextThemes.PROFILE]}>{workData[id].date}</Text>
           <SubTitle>詳細</SubTitle>
